@@ -1,0 +1,24 @@
+//Theme colors
+
+//$primary: #28401D;
+//$primary: #5C8E3C;
+$primary: #557841;
+$primary-faded: rgba(85, 120, 65, 0.375);
+
+//$secondary: #72A63F;
+//$secondary: #688B57;
+$secondary: #9C7A4D;
+
+//Text colors
+$text-light: #ffffff;
+$text-dark: #161616;
+$text-dark-brown: #4F362A;
+$text-light-green: $primary;
+
+body {
+    color: $text-dark-brown !important;
+}
+
+.row {
+    margin-bottom: 25px;
+}

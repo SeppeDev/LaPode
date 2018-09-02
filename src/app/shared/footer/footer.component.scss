@@ -1,0 +1,16 @@
+@import "../../../assets/theme";
+
+footer{
+    background-color: $secondary;
+    color: $text-dark-brown;
+
+    .container {
+        padding: 25px 0;
+    }
+}
+
+/* .footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+} */

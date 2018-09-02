@@ -1,0 +1,76 @@
+<div *ngIf="gite" class="container content">
+    
+  <div class="row">
+    <div class="col-sm-8">
+      <div id="detailCarouselIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li *ngFor="let image of gite.images; let i = index;" data-target="#detailCarouselIndicators" attr.data-slide-to="{{i}}" [ngClass]="{'active': i == 0}"></li>
+        </ol>
+
+        <div class="carousel-inner" role="listbox">
+          <div *ngFor="let image of gite.images; let i = index;" class="carousel-item" [ngClass]="{'active': i == 0}">
+            <img class="d-block img-fluid carousel-image" src="{{image.path}}" alt="{{image.description}}">
+          </div>
+        </div>
+        
+        <a class="carousel-control-prev" href="#detailCarouselIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#detailCarouselIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h1>{{gite.name}}</h1>
+
+      <p>
+        Geschikt voor {{gite.people}} personen
+      </p>
+
+      <!-- <h3>Beschrijving</h3> -->
+      <p>
+        {{gite.description}}
+      </p>
+      
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Prijzen</h2>
+
+      <table>
+        <tr *ngFor="let price of gite.prices;">
+          <td>
+              €{{price.price}}/week
+          </td>
+          <td>
+              {{price.period}}
+          </td>
+        </tr>
+        <tr>
+            <td>
+                €80/kamer/nacht
+            </td>
+            <td>
+                Van januari tot juni en van september tot december zijn de kamers ook B&amp;B-gewijs te huur, inclusief ontbijt
+            </td>
+          </tr>
+      </table>
+
+      <h2>Uitrusting</h2>
+
+      <div *ngFor="let item of gite.equipment">
+        {{item.name}}
+      </div>
+      <div>
+          Laken- en handdoeken pakketten te huur indien gewenst
+      </div>
+    </div>
+  </div>
+
+</div>

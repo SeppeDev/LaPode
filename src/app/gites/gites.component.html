@@ -1,0 +1,40 @@
+<div class="container content">
+  
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Onze gites</h1>
+  
+        <p>
+          Momenteel is er nog maar één gite beschikbaar, 'Le Grenier'. We zijn bezig met nog 2 anderen te renoveren: een voor 4 personen en een voor 8.
+          Le Grenier bevindt zich op de bovenverdieping van het hoofdhuis.
+        </p>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col-sm-6" *ngFor="let gite of gites">
+        <div class="card">
+          <img class="card-img-top" src="{{gite.images[0].path}}" alt="{{gite.images[0].description}}">
+          <div class="card-header">
+            <h2>{{gite.name}}</h2>
+          </div>
+          <div class="card-body">
+            <p>Geschikt voor {{gite.people}} personen.</p>
+            <a href="#" class="btn btn-outline-primary" routerLink="/gite/{{gite.id}}">Bekijken</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6" *ngFor="let gite of gites">
+        <div class="card">
+          <!-- <img class="card-img-top" src="../../../assets/images/under_construction.png" alt="Under construction"> -->
+          <div class="card-header">
+            <h2>Work in progress</h2>
+          </div>
+          <div class="card-body">
+            <p>Aan de andere gites zijn we nog aan het werken. Zodra ze klaar zijn, kan ja ze hier ook bekijken!</p>
+          </div>
+        </div>
+      </div>
+
+  </div>

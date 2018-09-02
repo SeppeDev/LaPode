@@ -1,0 +1,36 @@
+@import "../../../assets/theme";
+
+a{
+    color: $text-light;
+}
+
+.dropdown-item{
+    color: $text-dark;
+}
+
+.navbar{
+    &-nav{
+        margin: auto;
+    }
+
+    &-toggler-icon{
+        background-color: $secondary;
+    }
+
+    &-brand{
+        color: $text-dark-brown;
+    }
+
+    .nav-item{
+
+        padding: 10px;
+
+        &-middle-left{
+            padding-right: 40px;
+        }
+
+        &-middle-right{
+            padding-left: 20px;
+        }
+    }
+}
