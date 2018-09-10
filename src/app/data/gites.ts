@@ -5,9 +5,10 @@ export const Gites: Gite[] = [
         id: 1,
         name: 'Le Grenier',
         description: 'De gite heeft toegang tot een overdekt terras, BBQ en tuinmeubelen. Zelf bestaat de gite uit een keuken, ' +
-        'uitgerust met gasvuur, microgolf, oven, afwasmachine, grote frigo en diepvries, een living, een gezamelijke eetkamer, '+
-        'een apart toilet en tot slot 3 kamers. Twee kamers met 2persoonsbed een een eigen badkamer, en één kamer met een ' +
-        'stapelbed voor drie, met een douche, lavabo en de sauna. Babyuitrusting is mogelijk op aanvraag.',
+        'uitgerust met gasvuur, microgolf, oven, afwasmachine, grote koelkast en diepvries, een living, een eetkamer, ' +
+        'een apart toilet en tot slot 3 kamers. Twee kamers met 2-persoonsbed en elk een eigen badkamer, en één kamer met een ' +
+        'stapelbed voor drie, met een douche, lavabo en de sauna. Verder is er ook een elektrische piano beschikbaar. ' +
+        'Tot slot is babyuitrusting mogelijk op aanvraag.',
         prices: [
           { id: 1, period: 'januari, februari, maart, november en december', description: 'per week', price: 1000 },
           { id: 1, period: 'april, mei, juni, september en oktober', description: 'per week', price: 1300 },
@@ -28,7 +29,7 @@ export const Gites: Gite[] = [
           {'id': 2, 'name': 'microgolf'},
           {'id': 3, 'name': 'oven'},
           {'id': 4, 'name': 'afwasmachine'},
-          {'id': 5, 'name': 'frigo'},
+          {'id': 5, 'name': 'koelkast'},
           {'id': 6, 'name': 'diepvries'}
         ],
         rooms: [
