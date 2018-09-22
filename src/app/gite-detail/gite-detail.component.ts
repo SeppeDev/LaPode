@@ -4,7 +4,7 @@ import { Gite } from './../models/gite';
 import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import 'rxjs/add/operator/switchMap';
+
 
 @Component({
   selector: 'app-gite-detail',
