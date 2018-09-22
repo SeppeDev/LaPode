@@ -4,6 +4,7 @@ import { Gite } from './../models/gite';
 import { Component, OnInit, Input } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { Entry } from 'contentful';
 
 
 @Component({
@@ -12,8 +13,8 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./gite-detail.component.scss']
 })
 export class GiteDetailComponent implements OnInit {
-  id: number;
-  @Input() gite: Gite;
+  id: string;
+  @Input() gite: Entry<any>;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,12 +25,11 @@ export class GiteDetailComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {this.id = params['id']; });
     this.getGite();
-    console.log(this.gite);
   }
 
   getGite(): void {
     this.giteService.getGite(this.id)
-      .subscribe(gite => this.gite = gite);
+      .then(gite => this.gite = gite);
   }
 
   goBack(): void {

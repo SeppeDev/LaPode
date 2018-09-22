@@ -8,8 +8,8 @@
         </ol>
 
         <div class="carousel-inner" role="listbox">
-          <div *ngFor="let image of gite.images; let i = index;" class="carousel-item" [ngClass]="{'active': i == 0}">
-            <img class="d-block img-fluid carousel-image" src="{{image.path}}" alt="{{image.description}}">
+          <div *ngFor="let image of gite.fields.images; let i = index;" class="carousel-item" [ngClass]="{'active': i == 0}">
+            <img class="d-block img-fluid carousel-image" src="{{image.fields.file.url}}" alt="{{image.fields.description}}">
           </div>
         </div>
         
@@ -25,15 +25,15 @@
     </div>
 
     <div class="col-sm-4">
-      <h1>{{gite.name}}</h1>
+      <h1>{{gite.fields.name}}</h1>
 
       <p>
-        Geschikt voor {{gite.people}} personen
+        Geschikt voor {{gite.fields.people}} personen
       </p>
 
       <!-- <h3>Beschrijving</h3> -->
       <p>
-        {{gite.description}}
+        {{gite.fields.description}}
       </p>
       
     </div>
@@ -44,31 +44,20 @@
       <h2>Prijzen</h2>
 
       <table>
-        <tr *ngFor="let price of gite.prices;">
+        <tr *ngFor="let price of gite.fields.prices;">
           <td>
-              €{{price.price}}/week
+              €{{price.price}}/{{price.description}}
           </td>
           <td>
               {{price.period}}
           </td>
         </tr>
-        <tr>
-            <td>
-                €80/kamer/nacht
-            </td>
-            <td>
-                Van januari tot juni en van september tot december zijn de kamers ook B&amp;B-gewijs te huur, inclusief ontbijt
-            </td>
-          </tr>
       </table>
 
       <h2>Uitrusting</h2>
 
-      <div *ngFor="let item of gite.equipment">
+      <div *ngFor="let item of gite.fields.equipment">
         {{item.name}}
-      </div>
-      <div>
-          Laken- en handdoekenpakket te huur indien gewenst
       </div>
     </div>
   </div>

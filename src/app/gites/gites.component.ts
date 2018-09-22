@@ -1,8 +1,7 @@
 import { GiteService } from './../services/gite.service';
 import { Gite } from './../models/gite';
 import { Component, OnInit, Input } from '@angular/core';
-import { Location } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-gites',
@@ -11,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GitesComponent implements OnInit {
 
-  gites: Gite[];
+  private gites: Entry<any>[] = [];
+  
 
   constructor(private giteService: GiteService) { }
 
@@ -21,7 +21,7 @@ export class GitesComponent implements OnInit {
 
   getGites(): void {
     this.giteService.getGites()
-    .subscribe(gites => this.gites = gites);
+      .then(gites => this.gites = gites);
   }
 
 }

@@ -23,10 +23,11 @@
     "@angular/router": "^6.1.8",
     "bootstrap": "^4.0.0-beta.2",
     "bootstrap-sass": "^3.3.7",
+    "contentful": "^7.0.3",
     "core-js": "^2.4.1",
     "rxjs": "^6.3.2",
-    "zone.js": "^0.8.14",
-    "rxjs-compat": "^6.0.0-rc.0"
+    "rxjs-compat": "^6.0.0-rc.0",
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.8.0",

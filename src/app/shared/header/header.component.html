@@ -14,7 +14,7 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" routerLink="/gites">Alle gites</a>
             <div class="dropdown-divider"></div>
-            <a *ngFor="let gite of gites" class="dropdown-item" routerLink="/gite/{{gite.id}}">{{gite.name}}</a>
+            <a *ngFor="let gite of gites" class="dropdown-item" routerLink="/gite/{{gite.sys.id}}">{{gite.fields.name}}</a>
           </div></li>
 
         <li class="nav-item">

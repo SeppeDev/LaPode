@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Gite } from '../../models/gite';
 import { GiteService } from '../../services/gite.service';
 import { Input } from '@angular/core';
+import { Entry } from 'contentful';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() carousel: boolean;
 
-  gites: Gite[];
+  private gites: Entry<any>[] = [];
 
   constructor(private giteService: GiteService) { }
 
@@ -22,7 +23,7 @@ export class HeaderComponent implements OnInit {
 
   getGites(): void {
     this.giteService.getGites()
-    .subscribe(gites => this.gites = gites);
+    .then(gites => this.gites = gites);
   }
 
 }
