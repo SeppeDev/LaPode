@@ -36,6 +36,12 @@ export const Gites: Gite[] = [
           {id: 1, type: 'double_room', bed_size: '160x200', bathroom: true},
           {id: 2, type: 'double_room', bed_size: '160x200', bathroom: true},
           {id: 3, type: 'bunk', bed_size: '80x190', bathroom: true}
-        ]
+        ],
+        booking: {
+          id: 1,
+          start_date: "01/01/2001",
+          end_date: "01/02/2001",
+          client_name: "Seppe Goossens"
+        }
     }
 ];
