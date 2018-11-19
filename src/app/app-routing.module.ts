@@ -14,11 +14,11 @@ const routes: Routes = [
   { path: 'gite/:id', component: GiteDetailComponent },
   { path: 'grounds', component: GroundsComponent },
   { path: 'contact', component: ContactComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

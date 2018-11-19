@@ -34,7 +34,7 @@ import { CalendarComponent } from './calendar/calendar.component';
     ContactComponent,
     GroundsComponent,
     AboutComponent,
-    CalendarComponent
+    CalendarComponent,
   ],
   imports: [
     CommonModule,
@@ -44,17 +44,13 @@ import { CalendarComponent } from './calendar/calendar.component';
     BrowserAnimationsModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
-      useFactory: adapterFactory
+      useFactory: adapterFactory,
     }),
     NgbModule,
-    FlatpickrModule.forRoot()
+    FlatpickrModule.forRoot(),
   ],
-  providers: [
-    GiteService
-  ],
+  providers: [GiteService],
   bootstrap: [AppComponent],
-  exports: [
-    CalendarComponent
-  ]
+  exports: [CalendarComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -4,25 +4,36 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class GiteService {
-
   private client = createClient({
     space: environment.space,
-    accessToken: environment.accessToken
+    accessToken: environment.accessToken,
   });
 
-  constructor() { }
+  constructor() {}
 
-    getGites(query?: object): Promise<Entry<any>[]> {
-      return this.client.getEntries(Object.assign({
-        content_type: 'cottage'
-      }, query))
-      .then(res => res.items);
-    }
+  getGites(query?: object): Promise<Entry<any>[]> {
+    return this.client
+      .getEntries(
+        Object.assign(
+          {
+            content_type: 'cottage',
+          },
+          query,
+        ),
+      )
+      .then((res) => res.items);
+  }
 
-    getGite(id: string): Promise<Entry<any>> {
-      return this.client.getEntries(Object.assign({
-        content_type: "cottage"
-      }, {"sys.id": id}))
-        .then(res => res.items[0]);
-    }
+  getGite(id: string): Promise<Entry<any>> {
+    return this.client
+      .getEntries(
+        Object.assign(
+          {
+            content_type: 'cottage',
+          },
+          { 'sys.id': id },
+        ),
+      )
+      .then((res) => res.items[0]);
+  }
 }

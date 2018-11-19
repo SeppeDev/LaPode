@@ -8,9 +8,8 @@ describe('GiteDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GiteDetailComponent ]
-    })
-    .compileComponents();
+      declarations: [GiteDetailComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

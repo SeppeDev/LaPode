@@ -5,7 +5,7 @@ import { GiteService } from './gite.service';
 describe('GiteService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [GiteService]
+      providers: [GiteService],
     });
   });
 

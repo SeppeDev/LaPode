@@ -8,6 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "format": "prettier --write '**/*.{ts,json,css, scss}'",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -30,6 +31,7 @@
     "core-js": "^2.4.1",
     "date-fns": "^1.29.0",
     "flatpickr": "^4.5.2",
+    "prettier": "^1.15.2",
     "rxjs": "^6.3.2",
     "rxjs-compat": "^6.0.0-rc.0",
     "zone.js": "^0.8.14"

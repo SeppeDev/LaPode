@@ -5,14 +5,14 @@ import { Price } from './price';
 import { Booking } from './booking';
 
 export class Gite {
-    id: number;
-    name: string;
-    description: string;
-    prices: Price[];
-    images: Image[];
-    area: number;
-    people: number;
-    equipment: Equipment[];
-    rooms: Room[];
-    booking?: Booking;
+  id: number;
+  name: string;
+  description: string;
+  prices: Price[];
+  images: Image[];
+  area: number;
+  people: number;
+  equipment: Equipment[];
+  rooms: Room[];
+  booking?: Booking;
 }

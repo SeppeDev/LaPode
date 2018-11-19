@@ -44,12 +44,12 @@
       <h2>Prijzen</h2>
 
       <table>
-        <tr *ngFor="let price of gite.fields.prices;">
+        <tr *ngFor="let price of gite.fields.prices">
           <td>
-              €{{price.price}}/{{price.description}}
+              €{{price.fields.price}}/{{price.fields.description}}
           </td>
           <td>
-              {{price.period}}
+              {{price.fields.period}}
           </td>
         </tr>
       </table>
@@ -57,11 +57,11 @@
       <h2>Uitrusting</h2>
 
       <div *ngFor="let item of gite.fields.equipment">
-        {{item.name}}
+        {{item.fields.name}}
       </div>
 
       <h2>Kalendar</h2>
-      <calendar-component></calendar-component>
+      <calendar-component [booking]="gite.fields.booking.fields"></calendar-component>
     </div>
   </div>
 
