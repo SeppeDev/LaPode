@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
@@ -49,7 +49,10 @@ import { CalendarComponent } from './calendar/calendar.component';
     NgbModule,
     FlatpickrModule.forRoot(),
   ],
-  providers: [GiteService],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'nl-BE' },
+    GiteService
+  ],
   bootstrap: [AppComponent],
   exports: [CalendarComponent],
 })
