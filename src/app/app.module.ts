@@ -40,7 +40,7 @@ registerLocaleData(localeEn, 'en');
 
 // AoT requires an export function for factories
 export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient);
+  return new TranslateHttpLoader(httpClient, './../assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -62,6 +62,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
@@ -70,7 +71,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     NgbModule,
     FlatpickrModule.forRoot(),
     CoreModule,
-    TranslateModule.forRoot(),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
   ],
   providers: [
     {
