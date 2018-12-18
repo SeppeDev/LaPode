@@ -3,6 +3,15 @@
 	"About text": "",
 	"About hope to welcome you": "",
 	"About names": "",
+	"Contact_Address title": "",
+	"Contact_Address street": "",
+	"Contact_Address village": "",
+	"Contact_Address province": "",
+	"Contact_Address country": "",
+	"Contact_Address from Brussels": "",
+	"Contact_Address car": "",
+	"Contact_Address plane": "",
+	"Contact_ContactUs title": "",
 	"Language": "Language",
 	"Home_Welcome": "",
 	"Home_Welcome text": "",
@@ -11,8 +20,5 @@
 	"Home_Gites button": "",
 	"Home_Grounds title": "",
 	"Home_Grounds text": "",
-	"Home_Grounds button": "",
-	"Welcome": "Welcome at La Pode",
-	"Welcome text": "",
-	"welcome-text": ""
+	"Home_Grounds button": ""
 }

@@ -10,7 +10,7 @@ export class LanguageSelectorComponent implements OnInit {
 
   constructor(private translate: TranslateService, private adapter: DateAdapter<any>) { }
 
-  ngOnInit() {console.log('init')
+  ngOnInit() {
     this.translate.addLangs(['nl', 'fr', 'en']);
     this.translate.setDefaultLang('nl');
 
