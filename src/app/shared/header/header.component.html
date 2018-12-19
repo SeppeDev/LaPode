@@ -9,16 +9,16 @@
       <ul class="navbar-nav">
         <li class="nav-item nav-item-middle-right dropdown">
           <a class="nav-link dropdown-toggle" href="#ng" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Gites
+            {{ 'Header_Gites' | translate }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" routerLink="/gites">Alle gites</a>
+            <a class="dropdown-item" routerLink="/gites">{{ 'Header_Gites all' | translate }}</a>
             <div class="dropdown-divider"></div>
             <a *ngFor="let gite of gites" class="dropdown-item" routerLink="/gite/{{gite.sys.id}}">{{gite.fields.name}}</a>
           </div></li>
 
         <li class="nav-item">
-            <a class="nav-link nav-item-middle-left" routerLink="/grounds">Terrein</a></li>
+            <a class="nav-link nav-item-middle-left" routerLink="/grounds">{{ 'Header_Grounds' | translate }}</a></li>
 
 
         <li class="nav-item">
@@ -26,10 +26,10 @@
         
 
         <li class="nav-item">
-            <a class="nav-link" routerLink="/about">Over ons</a></li>
+            <a class="nav-link" routerLink="/about">{{ 'Header_About' | translate }}</a></li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contact">Contact</a></li>
+          <a class="nav-link" routerLink="/contact">{{ 'Header_Contact' | translate }}</a></li>
       </ul>
     </div>
     <app-language-selector></app-language-selector>
