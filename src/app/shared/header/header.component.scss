@@ -1,14 +1,14 @@
 @import "../../../assets/theme";
 
-a{
+a {
     color: $text-light;
 }
 
-.dropdown-item{
+.dropdown-item {
     color: $text-dark;
 }
 
-.navbar{
+.navbar {
     &-nav{
         margin: auto;
     }
@@ -33,4 +33,9 @@ a{
             padding-left: 20px;
         }
     }
+}
+
+app-language-selector {
+    position: absolute;
+    right: 25px;
 }

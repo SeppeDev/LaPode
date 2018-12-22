@@ -28,7 +28,7 @@
       <h1>{{gite.fields.name}}</h1>
 
       <p>
-        Geschikt voor {{gite.fields.people}} personen
+        {{ 'GiteDetail_Detail suitable for' | translate }} {{gite.fields.people}} {{ 'GiteDetail_Detail people' | translate }}
       </p>
 
       <!-- <h3>Beschrijving</h3> -->
@@ -41,7 +41,7 @@
 
   <div class="row">
     <div class="col-sm-12">
-      <h2>Prijzen</h2>
+      <h2>{{ 'GiteDetail_Prices title' | translate }}</h2>
 
       <table>
         <tr *ngFor="let price of gite.fields.prices">
@@ -54,14 +54,14 @@
         </tr>
       </table>
 
-      <h2>Uitrusting</h2>
+      <h2>{{ 'GiteDetail_Equipment title' | translate }}</h2>
 
       <div *ngFor="let item of gite.fields.equipment">
         {{item.fields.name}}
       </div>
 
-      <h2>Kalendar</h2>
-      <calendar-component [booking]="gite.fields.booking.fields"></calendar-component>
+      <!-- <h2>{{ 'GiteDetail_Calendar title' | translate }}</h2>
+      <calendar-component [booking]="gite.fields.booking.fields"></calendar-component> -->
     </div>
   </div>
 
