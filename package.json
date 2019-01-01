@@ -8,7 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "format": "prettier --write '**/*.{ts,json,css, scss}'",
+    "format": "prettier --write '**/*.{ts,json,css,scss}'",
     "e2e": "ng e2e",
     "extract": "ngx-translate-extract --input ./src --output ./src/assets/i18n/nl.json ./src/assets/i18n/fr.json ./src/assets/i18n/en.json"
   },

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { createClient, Entry } from 'contentful';
 import { environment } from '../../environments/environment';
-import { locale } from 'moment';
 
 @Injectable()
 export class GiteService {
@@ -23,8 +22,8 @@ export class GiteService {
             content_type: 'cottage',
           },
           {
-            'locale': this.locale
-          }
+            locale: this.locale,
+          },
         ),
       )
       .then((res) => res.items);
@@ -32,7 +31,7 @@ export class GiteService {
 
   getGite(id: string): Promise<Entry<any>> {
     this.setlocale();
-    
+
     return this.client
       .getEntries(
         Object.assign(
@@ -41,8 +40,8 @@ export class GiteService {
           },
           {
             'sys.id': id,
-            'locale': this.locale
-          }
+            locale: this.locale,
+          },
         ),
       )
       .then((res) => res.items[0]);

@@ -5,7 +5,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule/*, DateAdapter*/ } from 'angular-calendar';
+import { CalendarModule, DateAdapter as CalenderDateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { MAT_MOMENT_DATE_FORMATS, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
@@ -65,7 +65,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HttpClientModule,
     BrowserAnimationsModule,
     CalendarModule.forRoot({
-      provide: DateAdapter,
+      provide: CalenderDateAdapter,
       useFactory: adapterFactory,
     }),
     NgbModule,
@@ -75,8 +75,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [HttpClient]
-      }
+        deps: [HttpClient],
+      },
     }),
   ],
   providers: [
@@ -85,18 +85,18 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       useFactory: (translate: TranslateService) => {
         return translate.currentLang;
       },
-      deps: [TranslateService]
+      deps: [TranslateService],
     },
     {
       provide: DateAdapter,
       useClass: MomentDateAdapter,
-      deps: [MAT_DATE_LOCALE]
+      deps: [MAT_DATE_LOCALE],
     },
     {
       provide: MAT_DATE_FORMATS,
-      useValue: MAT_MOMENT_DATE_FORMATS
+      useValue: MAT_MOMENT_DATE_FORMATS,
     },
-    GiteService
+    GiteService,
   ],
   bootstrap: [AppComponent],
   exports: [CalendarComponent],

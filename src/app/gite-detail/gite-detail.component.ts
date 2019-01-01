@@ -25,7 +25,7 @@ export class GiteDetailComponent implements OnInit {
   }
 
   getGite(): void {
-    this.giteService.getGite(this.id).then((gite) => this.gite = gite);
+    this.giteService.getGite(this.id).then((gite) => (this.gite = gite));
   }
 
   goBack(): void {

@@ -1,41 +1,49 @@
 <div *ngIf="gite" class="container content">
-    
   <div class="row">
     <div class="col-sm-8">
       <div id="detailCarouselIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li *ngFor="let image of gite.images; let i = index;" data-target="#detailCarouselIndicators" attr.data-slide-to="{{i}}" [ngClass]="{'active': i == 0}"></li>
+          <li
+            *ngFor="let image of gite.images; let i = index"
+            data-target="#detailCarouselIndicators"
+            attr.data-slide-to="{{ i }}"
+            [ngClass]="{ active: i == 0 }"
+          ></li>
         </ol>
 
         <div class="carousel-inner" role="listbox">
-          <div *ngFor="let image of gite.fields.images; let i = index;" class="carousel-item" [ngClass]="{'active': i == 0}">
-            <img class="d-block img-fluid carousel-image" src="{{image.fields.file.url}}" alt="{{image.fields.description}}">
+          <div
+            *ngFor="let image of gite.fields.images; let i = index"
+            class="carousel-item"
+            [ngClass]="{ active: i == 0 }"
+          >
+            <img
+              class="d-block img-fluid carousel-image"
+              src="{{ image.fields.file.url }}"
+              alt="{{ image.fields.description }}"
+            />
           </div>
         </div>
-        
+
         <a class="carousel-control-prev" href="#detailCarouselIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span> <span class="sr-only">Previous</span>
         </a>
         <a class="carousel-control-next" href="#detailCarouselIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span> <span class="sr-only">Next</span>
         </a>
       </div>
     </div>
 
     <div class="col-sm-4">
-      <h1>{{gite.fields.name}}</h1>
+      <h1>{{ gite.fields.name }}</h1>
 
       <p>
-        {{ 'GiteDetail_Detail suitable for' | translate }} {{gite.fields.people}} {{ 'GiteDetail_Detail people' | translate }}
+        {{ 'GiteDetail_Detail suitable for' | translate }} {{ gite.fields.people }}
+        {{ 'GiteDetail_Detail people' | translate }}
       </p>
 
       <!-- <h3>Beschrijving</h3> -->
-      <p>
-        {{gite.fields.description}}
-      </p>
-      
+      <p>{{ gite.fields.description }}</p>
     </div>
   </div>
 
@@ -45,24 +53,17 @@
 
       <table>
         <tr *ngFor="let price of gite.fields.prices">
-          <td>
-              €{{price.fields.price}}/{{price.fields.description}}
-          </td>
-          <td>
-              {{price.fields.period}}
-          </td>
+          <td>€{{ price.fields.price }}/{{ price.fields.description }}</td>
+          <td>{{ price.fields.period }}</td>
         </tr>
       </table>
 
       <h2>{{ 'GiteDetail_Equipment title' | translate }}</h2>
 
-      <div *ngFor="let item of gite.fields.equipment">
-        {{item.fields.name}}
-      </div>
+      <div *ngFor="let item of gite.fields.equipment">{{ item.fields.name }}</div>
 
-      <!-- <h2>{{ 'GiteDetail_Calendar title' | translate }}</h2>
-      <calendar-component [booking]="gite.fields.booking.fields"></calendar-component> -->
+      <h2>{{ 'GiteDetail_Calendar title' | translate }}</h2>
+      <calendar-component [booking]="gite.fields.booking.fields"></calendar-component>
     </div>
   </div>
-
 </div>

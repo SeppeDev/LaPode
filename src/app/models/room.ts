@@ -7,5 +7,5 @@ export class Room {
   bed_size: string;
   bathroom: boolean;
   price?: Price; // each room could have separate pricing
-  booking?: Booking; //each room can be booked separately, working without users so data type on model itself
+  booking?: Booking; // each room can be booked separately, working without users so data type on model itself
 }

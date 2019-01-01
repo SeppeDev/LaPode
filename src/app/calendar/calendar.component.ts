@@ -1,23 +1,14 @@
 import { Booking } from './../models/booking';
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit, Input } from '@angular/core';
-import { startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours } from 'date-fns';
+import { Component, ChangeDetectionStrategy, OnInit, Input } from '@angular/core';
+import { startOfDay, endOfDay, isSameDay, isSameMonth, format } from 'date-fns';
 import { Subject } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView } from 'angular-calendar';
+import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView } from 'angular-calendar';
 import { Entry } from 'contentful';
 
 const colors: any = {
   red: {
     primary: '#ad2121',
     secondary: '#FAE3E3',
-  },
-  blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF',
-  },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA',
   },
 };
 
@@ -28,8 +19,6 @@ const colors: any = {
   styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent implements OnInit {
-  @ViewChild('modalContent')
-  modalContent: TemplateRef<any>;
   @Input() booking: Entry<Booking>;
   view: CalendarView = CalendarView.Month;
 
@@ -37,22 +26,18 @@ export class CalendarComponent implements OnInit {
 
   viewDate: Date = new Date();
 
-  modalData: {
-    action: string;
-    event: CalendarEvent;
-  };
-
   events: CalendarEvent[] = [];
 
   refresh: Subject<any> = new Subject();
 
-  activeDayIsOpen = true;
+  activeDayIsOpen = false;
 
-  constructor(private modal: NgbModal) {}
+  constructor() {}
 
   ngOnInit(): void {
-    console.log('calendar loaded with booking', this.booking);
-    this.addEvent(this.booking);
+    if (this.booking) {
+      this.addEvent(this.booking);
+    }
   }
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
@@ -69,26 +54,18 @@ export class CalendarComponent implements OnInit {
   eventTimesChanged({ event, newStart, newEnd }: CalendarEventTimesChangedEvent): void {
     event.start = newStart;
     event.end = newEnd;
-    this.handleEvent('Dropped or resized', event);
     this.refresh.next();
-  }
-
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
   }
 
   addEvent(booking: any): void {
     this.events.push({
-      title: 'Booking Le Grenier',
+      title: `Le Grenier booked from ${format(booking.startDate, 'DD/MM/YYYY')} to ${format(
+        booking.endDate,
+        'DD/MM/YYYY',
+      )}`,
       start: startOfDay(booking.startDate),
       end: endOfDay(booking.endDate),
       color: colors.red,
-      draggable: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      }
     });
     this.refresh.next();
   }
